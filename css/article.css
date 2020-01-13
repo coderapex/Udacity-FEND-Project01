@@ -1,0 +1,270 @@
+/* BLOG PAGE CSS SETTINGS */
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: minmax(auto, auto);
+
+  grid-template-areas: "navigation navigation" "current-article current-article" "article-body article-body" "author author" "prev-post next-post" "sidebar sidebar" "social social" "footer footer";
+}
+
+#current-article {
+  background-color: rgb(0, 19, 128);
+  color: rgb(255, 255, 0);
+
+  grid-area: current-article;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template: "current-article-image" "current-article-description";
+
+  justify-items: center;
+}
+
+#current-article-image {
+  grid-area: current-article-image;
+}
+
+#current-article-image > img {
+  width: 100%;
+  max-height: 100vh;
+}
+
+#current-article-description {
+  grid-area: current-article-description;
+
+  font-size: 200%;
+
+  text-align: center;
+}
+
+#article-body {
+  grid-area: article-body;
+  padding: 2%;
+
+  display: flex;
+  flex-direction: column;
+
+  line-height: 1.5em;
+
+  text-align: justify;
+}
+
+#article-body > p,
+h2 {
+  margin-bottom: 1.1em;
+}
+
+#excerpt {
+  font-size: 1.6em;
+  line-height: 1.75em;
+  font-weight: bold;
+}
+
+#excerpt::first-line {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+#sidebar {
+  background-color: rgb(161, 175, 255);
+
+  grid-area: sidebar;
+  padding: 5%;
+
+  line-height: 1.5em;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#sidebar > * {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+#latest-articles > ol > li {
+  text-transform: capitalize;
+  border-bottom: 3px solid gray;
+  margin: 15px 5px;
+}
+
+/* CONTACT FORM */
+
+#contact-sidebar {
+  display: none;
+}
+
+/* Style inputs with type="text", select elements and textareas */
+input[type="text"],
+select,
+textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type="submit"] {
+  background-color: #534caf;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.prev-next-auth {
+  background-color: rgb(75, 75, 75);
+  color: rgb(255, 255, 0);
+  padding-left: 0px;
+  padding-right: 0px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#prev-post {
+  grid-area: prev-post;
+}
+
+#prev-next-angle {
+  font-size: 750%;
+}
+
+#prev-next-image {
+  display: none;
+}
+
+#prev-next-auth > div {
+  width: 100%;
+  height: 100%;
+}
+
+#prev-post {
+  background-color: rgb(0, 19, 128);
+
+  grid-area: prev-post;
+
+  /* padding: 2.5%; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#author {
+  width: 100%;
+  grid-area: author;
+
+  color: aliceblue;
+
+  /* padding: 2.5%; */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#author-pic {
+  flex-grow: 1;
+
+  text-align: center;
+  vertical-align: middle;
+}
+
+#author-pic > img {
+  height: 100px;
+}
+
+#author-name {
+  font-size: 150%;
+}
+
+#author-info {
+  flex-grow: 3;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+#author-social {
+  display: flex;
+  flex-direction: row;
+}
+
+#author-social > img {
+  max-height: 50px;
+}
+
+#next-post {
+  background-color: rgb(0, 19, 128);
+
+  grid-area: next-post;
+
+  /* padding: 2.5%; */
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* rules for medium-sized screens and above */
+
+@media (min-width: 600px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: minmax(auto, auto);
+
+    grid-template-areas: "navigation navigation navigation" "current-article current-article current-article" "article-body article-body sidebar" "prev-post author next-post" "social social social" "footer footer footer";
+  }
+
+  #contact-sidebar {
+    display: block;
+  }
+}
+
+/* rules for medium-sized screen ONLY */
+
+@media (min-width: 600px) and (max-width: 899px) {
+}
+
+/* rules for large-sized screen */
+
+@media (min-width: 900px) {
+  #prev-next-image {
+    display: flex;
+    min-width: 100px;
+    max-width: auto;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+  }
+
+  #prev-next-image > img {
+    display: block;
+    position: absolute;
+    top: 25%;
+    /* left: 50%; */
+    max-height: 100%;
+    max-width: 100%;
+    /* transform: translate(50%, 50%); */
+  }
+}
