@@ -35,6 +35,20 @@ p {
   font-family: "Roboto", sans-serif;
 }
 
+a {
+  color: rgb(0, 29, 190);
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+}
+
+a:visited {
+  color: rgb(0, 24, 160);
+}
+
+a:hover {
+  color: rgb(255, 0, 0);
+}
+
 .logo-font {
   font-family: "Monoton", cursive;
 }
@@ -50,6 +64,30 @@ p {
 }
 
 .logo-font > a:hover {
+  color: rgb(255, 0, 0);
+}
+
+#prev-next-info > .logo-font > a {
+  color: yellow;
+}
+
+#prev-next-info > .logo-font > a:visited {
+  color: yellow;
+}
+
+#prev-next-info > .logo-font > a:hover {
+  color: rgb(255, 0, 0);
+}
+
+#prev-next-angle > a {
+  color: yellow;
+}
+
+#prev-next-angle > a:visited {
+  color: yellow;
+}
+
+#prev-next-angle > a:hover {
   color: rgb(255, 0, 0);
 }
 
