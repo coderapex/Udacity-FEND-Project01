@@ -1,0 +1,10 @@
+/* Importing Google Fonts */
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Merriweather&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Monoton&display=swap");
+
+/* importing css from other files */
+
+@import url(./split/reset.css);
+@import url(./split/style.css);
+@import url(./split/blog.css);

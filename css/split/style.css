@@ -3,6 +3,10 @@
 @import url("https://fonts.googleapis.com/css?family=Merriweather&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Monoton&display=swap");
 
+/* importing css from other files */
+
+@import url(reset.css);
+
 /* Setting Google Fonts */
 
 h1,
@@ -147,6 +151,7 @@ button:hover {
 }
 
 #logo-area {
+  display: inherit;
 }
 
 #menu-area {
@@ -302,21 +307,21 @@ button:hover {
 }
 
 .bg01 {
-  background-image: url("../img/white-seamless-1.jpg"),
+  background-image: url("../../img/white-seamless-1.jpg"),
     linear-gradient(0deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.99));
   background-size: cover;
   background-blend-mode: overlay;
 }
 
 .bg02 {
-  background-image: url("../img/white-seamless-2.jpg"),
+  background-image: url("../../img/white-seamless-2.jpg"),
     linear-gradient(0deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.99));
   background-size: cover;
   background-blend-mode: overlay;
 }
 
 .bg03 {
-  background-image: url("../img/white-seamless-3.jpg"),
+  background-image: url("../../img/white-seamless-3.jpg"),
     linear-gradient(0deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.99));
   background-size: cover;
   background-blend-mode: overlay;
@@ -399,7 +404,17 @@ blockquote {
   border-left: 5px solid rgb(137, 0, 216);
 }
 
-/* rules for medium-sized screens and above */
+/* rule to avoid side scrolling on screens less than 500px */
+
+@media (min-width: 100px) and (max-width: 499px) {
+  div {
+    padding: 0px;
+  }
+}
+
+/* TEMPORARY FIX : rules for medium-sized screens and above */
+/* reason : it could be caused by an element which has padding set to something with width set to 100% and it will go outside the parent */
+/* reference : https://stackoverflow.com/questions/15086908/how-to-avoid-horizontal-scroll-on-mobile-web-with-responsive-web-design */
 
 @media (min-width: 600px) {
   #navigation {
